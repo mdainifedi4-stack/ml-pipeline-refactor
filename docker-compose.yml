@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  pipeline:
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./outputs:/app/outputs
+      - ./mlflow.db:/app/mlflow.db
+    environment:
+      - PYTHONPATH=/app
+    command: python tests/test_pipeline.py
