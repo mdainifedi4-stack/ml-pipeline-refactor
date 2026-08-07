@@ -180,6 +180,35 @@ class MLPipeline:
                         'max_depth': [5, 10],
                         'min_samples_split': [2, 5]
                     }
+                },
+                {
+                    'name': 'GradientBoosting',
+                    'module': 'sklearn.ensemble',
+                    'class': 'GradientBoostingClassifier',
+                    'param_grid': {
+                        'n_estimators': [50, 100],
+                        'max_depth': [3, 5],
+                        'learning_rate': [0.05, 0.1]
+                    }
+                },
+                {
+                    'name': 'ExtraTrees',
+                    'module': 'sklearn.ensemble',
+                    'class': 'ExtraTreesClassifier',
+                    'param_grid': {
+                        'n_estimators': [50, 100],
+                        'max_depth': [5, 10],
+                        'min_samples_split': [2, 5]
+                    }
+                },
+                {
+                    'name': 'LogisticRegression',
+                    'module': 'sklearn.linear_model',
+                    'class': 'LogisticRegression',
+                    'param_grid': {
+                        'C': [0.1, 1.0, 10.0],
+                        'solver': ['lbfgs']
+                    }
                 }
             ]
         else:
@@ -189,6 +218,50 @@ class MLPipeline:
                     'module': 'sklearn.linear_model',
                     'class': 'LinearRegression',
                     'param_grid': {}
+                },
+                {
+                    'name': 'Ridge',
+                    'module': 'sklearn.linear_model',
+                    'class': 'Ridge',
+                    'param_grid': {
+                        'alpha': [0.1, 1.0, 10.0]
+                    }
+                },
+                {
+                    'name': 'Lasso',
+                    'module': 'sklearn.linear_model',
+                    'class': 'Lasso',
+                    'param_grid': {
+                        'alpha': [0.1, 1.0, 10.0]
+                    }
+                },
+                {
+                    'name': 'ElasticNet',
+                    'module': 'sklearn.linear_model',
+                    'class': 'ElasticNet',
+                    'param_grid': {
+                        'alpha': [0.1, 1.0],
+                        'l1_ratio': [0.2, 0.5, 0.8]
+                    }
+                },
+                {
+                    'name': 'RandomForest',
+                    'module': 'sklearn.ensemble',
+                    'class': 'RandomForestRegressor',
+                    'param_grid': {
+                        'n_estimators': [50, 100],
+                        'max_depth': [5, 10]
+                    }
+                },
+                {
+                    'name': 'GradientBoosting',
+                    'module': 'sklearn.ensemble',
+                    'class': 'GradientBoostingRegressor',
+                    'param_grid': {
+                        'n_estimators': [50, 100],
+                        'max_depth': [3, 5],
+                        'learning_rate': [0.05, 0.1]
+                    }
                 }
             ]
 
